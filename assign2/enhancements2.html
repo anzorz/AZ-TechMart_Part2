@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML5, tags"/>
+    <meta name="author" content="M Anzor Yousuf"/>
+    <meta name="description" content="Applied JS Enhancements for the Web Application">
+    <title>JavaScript Enhancements Documentation</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/AZ_TechMart_Logo.png" alt="AZ TechMart Logo">
+            </a>
+            <span class="brand-name">AZ TechMart</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="enquire.html">Enquire</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="enhancements2.html">Enhancements</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="enhancements">
+        <h1>JavaScript Enhancements Documentation</h1>
+    </section>
+
+    <main class="enhancement-section">
+        <section class="enhancement">
+            <h2>Enhancement 1: Checkbox for "Billing Address Different from Delivery Address"</h2>
+            <p><strong>Description:</strong> A checkbox is added on the "Enquire" page that, when checked, dynamically displays additional input fields for entering a billing address different from the delivery address.</p>
+            <p><strong>Interaction:</strong> The user triggers the enhancement by checking the "Billing address different from Delivery Address" checkbox. This action displays additional input fields for the billing address, allowing users to enter the necessary details.</p>
+            <p><strong>Implementation:</strong> The enhancement is implemented using JavaScript, which listens for the "change" event on the checkbox. When the checkbox is checked, the billing address section is displayed, and when unchecked, it is hidden.</p>
+            <p><strong>Link to Implementation:</strong> <a href="enquire.html">Enquire Page</a></p>
+            <p><strong>References:</strong> No third-party sources were used to create this enhancement.</p>
+        </section>
+
+        <section class="enhancement">
+            <h2>Enhancement 2: Concatenation of First and Last Name to Pre-fill "Name on Credit Card"</h2>
+            <p><strong>Description:</strong> On the "Enquire" page, the user's first and last names are concatenated and stored in the session storage. This stored full name is then automatically used to pre-fill the "Name on Credit Card" field on the "Payment" page.</p>
+            <p><strong>Interaction:</strong> The user triggers the enhancement by entering their first and last names on the "Enquire" page. This action automatically concatenates the names and stores them. When the user navigates to the "Payment" page, the stored full name is retrieved and pre-filled in the "Name on Credit Card" field.</p>
+            <p><strong>Implementation:</strong> The enhancement is implemented using JavaScript to listen for input events on the first and last name fields. When either field changes, the names are concatenated and stored in session storage. On the "Payment" page, the stored name is retrieved and used to pre-fill the "Name on Credit Card" field.</p>
+            <p><strong>Link to Implementation:</strong> <a href="payment.html">Payment Page</a></p>
+            <p><strong>References:</strong> No third-party sources were used to create this enhancement.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AZ TechMart. All rights reserved.</p>
+    </footer>
+</body>
+</html>

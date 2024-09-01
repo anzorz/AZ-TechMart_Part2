@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Payment page for AZ TechMart">
+    <meta name="keywords" content="HTML5, Payment"/>
+    <meta name="author" content="M Anzor Yousuf"/>
+    <title>AZ TechMart - Payment</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/part2.js" defer></script>
+    <script src="scripts/enhancements.js" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/AZ_TechMart_Logo.png" alt="AZ TechMart Logo">
+                <span class="brand-name">AZ TechMart</span>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="enquire.html">Enquire</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Payment Section -->
+    <section class="payment-section">
+        <h1>Payment Details</h1>
+
+        <!-- Customer Details Section -->
+        <section class="customer-details">
+            <h2>Customer Details</h2>
+            <p><strong>Name:</strong> <span id="customerName"></span></p>
+            <p><strong>Email:</strong> <span id="customerEmail"></span></p>
+            <p><strong>Address:</strong> <span id="customerAddress"></span></p>
+            <p><strong>Selected Product:</strong> <span id="selectedProduct"></span></p>
+            <p><strong>Quantity:</strong> <span id="productQuantity"></span></p>
+            <p><strong>Total Price:</strong> <span id="totalPrice"></span></p>
+        </section>
+
+        <!-- Payment Form Section -->
+        <section>
+            <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+                <fieldset>
+                    <legend>Credit Card Payment Details</legend>
+
+                    <label for="cardType">Credit Card Type:</label>
+                    <select id="cardType" name="cardType" required>
+                        <option value="">Select a Card Type...</option>
+                        <option value="Visa">Visa</option>
+                        <option value="Mastercard">Mastercard</option>
+                        <option value="American Express">American Express</option>
+                    </select>
+
+                    <!-- Input fields in payment.html -->
+                    <label for="cardName">Name on Credit Card:</label>
+                    <input type="text" id="cardName" placeholder="Name on Credit Card">
+
+
+                    <label for="cardNumber">Credit Card Number:</label>
+                    <input type="text" id="cardNumber" name="cardNumber" maxlength="16" placeholder="Enter 15 or 16 digits" required>
+
+                    <label for="expiryDate">Expiry Date (MM-YY):</label>
+                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM-YY" required>
+
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" maxlength="3" placeholder="Enter 3 digits" required>
+                </fieldset>
+
+                <!-- Buttons Section -->
+                <section class="form-buttons">
+                    <input type="submit" value="Check-Out">
+                    <button type="button" id="cancelOrderBtn">Cancel Order</button>
+                </section>
+            </form>
+        </section>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 AZ TechMart. All rights reserved.</p>
+    </footer>
+</body>
+</html>

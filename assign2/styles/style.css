@@ -1,0 +1,812 @@
+/*
+filename: style
+author: M Anzor Yousuf
+created: 06-08-2024
+last modified: 23-08-2024
+central css for assign1
+*/
+
+/* Background Image Section */
+.background-image-section {
+    position: relative;
+    background-image: url('../images/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 60px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Overlay */
+.background-image-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.669); 
+    z-index: 1;
+}
+
+/* Ensuring the text appears on top of the overlay */
+.background-image-section h2,
+.background-image-section p {
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Text shadow for better readability */
+}
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #4a5568; 
+    color: #ffffff; 
+    line-height: 1.6; /* Improved line height for readability */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #242d3c; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.888);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header .logo a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+header .logo a:hover {
+    color: #38b2ac;
+}
+
+header .brand-name {
+    margin-left: 10px;
+    font-size: 1.8em; 
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #38b2ac; /* Hover color for navigation links */
+    color: #2d3748; 
+}
+
+/* Hero Section Styles */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background-image: url('images/header_back.jpg'); 
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.838); 
+    position: relative;
+    color: white; 
+}
+
+/* Dark Overlay for Better Text Visibility */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.826); 
+    z-index: 1;
+}
+
+.hero h1, .hero p, .hero .cta-button {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); 
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CTA Button Styling */
+.cta-button {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #38b2ac;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #319795;
+    transform: translateY(-2px);
+}
+
+.introduction {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #1a202c; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.introduction h2 {
+    font-size: 2.8em; 
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2d3748;
+    font-size: 0.9em;
+    border-top: 3px solid #38b2ac; 
+}
+
+
+
+/* Product Page Styles */
+.product-range {
+    padding: 40px 20px;
+    background-color: #1a202c; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-range h1 {
+    font-size: 2em;
+    color: #38b2ac;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.product-item {
+    background-color: #2d3748;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: calc(33.333% - 40px); /* Adjust width to fit three items in a row */
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-item:hover {
+    transform: translateY(-5px); /* Lift the item slightly on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+}
+
+.product-item img {
+    width: 100%;  /* Ensure the image fills the section */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-item h2 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #38b2ac; 
+}
+
+.product-item p {
+    font-size: 0.95em;
+    margin-bottom: 15px;
+    line-height: 1.6;  
+}
+
+.product-item ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 15px 0;
+    font-size: 0.9em;  
+}
+
+.product-item ul li {
+    margin-bottom: 8px;
+}
+
+.product-item form {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.product-item label {
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.product-item select {
+    margin-right: 8px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.product-item button {
+    padding: 8px 15px;
+    background-color: #38b2ac;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.product-item button:hover {
+    background-color: #319795;
+    transform: translateY(-2px);
+}
+
+
+/* Layout Adjustments */
+.product-range {
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* Styles for the asides */
+.discount-offer{
+    width: 25%; 
+    float: right;
+    padding: 30px; 
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Specific styles for discount offer */
+.discount-offer {
+    background-color: #4a5568;
+    color: #ff4d4d; 
+    text-shadow: -1px -1px 2px #000, 1px 1px 2px #000; 
+    border: 2px solid #38b2ac;
+    font-style: italic; 
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); 
+}
+
+.lightbox img {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.lightbox:target {
+    display: block;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.lightbox .close:hover,
+.lightbox .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Product Grid Styles */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-grid .product-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-grid .product-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Enquiry Page Styles */
+
+.enquiry-form h1 {
+    color: #38b2ac;
+}
+
+.enquiry-form {
+    padding: 40px;
+    background-color: #2d3748;
+    border-radius: 15px;
+    max-width: 900px;
+    margin: 20px auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.enquiry-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.enquiry-form label {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #e2e8f0;
+}
+
+.enquiry-form input[type="text"], 
+.enquiry-form input[type="email"], 
+.enquiry-form select, 
+.enquiry-form textarea {
+    padding: 15px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #1a202c; 
+    color: white; 
+}
+
+.enquiry-form input[type="radio"],
+.enquiry-form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.enquiry-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.enquiry-form input[type="submit"] {
+    background-color: #38b2ac;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.enquiry-form input[type="submit"]:hover {
+    background-color: #319795;
+    transform: translateY(-2px); 
+}
+
+/* About Section */
+.about-me {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #2d3748; 
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+}
+
+/* Header styling */
+.about-me h1 {
+    font-size: 2.8em;
+    color: #38b2ac;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #38b2ac;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-me h2 {
+    font-size: 2em;
+    color: #e2e8f0;
+    margin-top: 40px;
+    border-bottom: 2px solid #38b2ac;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.about-me dl dt {
+    float: left;
+    clear: left;
+    width: 250px; 
+    font-weight: bold;
+    color: #38b2ac;
+}
+
+.about-me dl dd {
+    margin-left: 270px; 
+    padding-left: 5px;
+    color: #e2e8f0;
+}
+.details-box {
+    background-color: #1a202c; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+    margin-bottom: 20px;
+}
+
+/* Photo Styling */
+.about-me figure {
+    float: right;
+    border: 5px double #38b2ac; /* Double border */
+    padding: 20px; 
+    max-width: 200px;
+    margin: 0 0 20px 20px; 
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+    background-color: #2d3748;
+    text-align: center;
+}
+
+.about-me figure img {
+    width: 100%;
+    border-radius: 8px; 
+}
+
+.about-me figure figcaption {
+    color: #e2e8f0; 
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Table Styling */
+.about-me table {
+    width: 100%;
+    margin: 30px 0;
+    border-collapse: collapse;
+    background-color: #2d3748;
+    color: #e2e8f0;
+}
+
+.about-me table th,
+.about-me table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #38b2ac; 
+}
+
+.about-me table th {
+    background-color: #38b2ac;
+    color: #1a202c; 
+    font-weight: bold;
+}
+
+.about-me table tbody tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+.about-me table tbody tr:hover {
+    background-color: #38b2ac;
+    color: #1a202c;
+}
+
+/* Email Link Styling */
+.about-me a {
+    color: #38b2ac;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.about-me a:hover {
+    text-decoration: underline;
+}
+
+/* Fluid Layout for All Pages */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header, footer {
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+        
+    .product-item {
+        width: 100%;  /* Full width for small screens */
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .introduction h2 {
+        font-size: 2em;
+    }
+
+    .about-me dl dt, 
+    .about-me dl dd {
+        float: none;
+        margin-left: 0;
+    }
+
+    .about-me figure {
+        float: none;
+        margin: 0 auto 20px auto;
+    }
+}
+
+.enhancement-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.enhancement {
+    background-color: #2d3748;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.enhancements h1 {
+    text-align: center;
+    color: #38b2ac;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #38b2ac;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.enhancement h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.enhancement p, .enhancement h3 {
+    margin-bottom: 15px;
+}
+
+
+/* --------------------------------------------------------- */
+
+/* CSS for assign2 */
+
+/* Styles for product prices */
+.product-price {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #38b2ac;
+    margin: 10px 0;
+}
+
+
+.enquiry-form fieldset {
+    border: 1px solid #38b2ac;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: #2d3748;
+}
+
+.enquiry-form legend {
+    font-size: 1.2em;
+    padding: 0 10px;
+    font-weight: bold;
+    color: #38b2ac;
+}
+
+
+
+
+/* Payment Page Styles */
+
+.payment-section {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: 40px;
+    background-color: #2d3748; 
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.payment-section h1 {
+    color: #38b2ac;
+    margin-bottom: 30px;
+}
+
+.customer-details {
+    background-color: #1a202c;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #e2e8f0;
+}
+
+.customer-details h2, 
+.customer-details h3 {
+    font-size: 1.6em;
+    color: #38b2ac;
+    margin-bottom: 15px;
+}
+
+.customer-details p, 
+.customer-details ul li {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.customer-details ul {
+    padding-left: 20px;
+}
+
+.payment-section section {
+    margin-top: 20px;
+}
+
+.payment-section fieldset {
+    border: 1px solid #38b2ac;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #1a202c;
+}
+
+.payment-section legend {
+    font-size: 1.4em;
+    padding: 0 10px;
+    color: #38b2ac;
+        font-weight: bold;
+}
+
+.payment-section label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #e2e8f0;
+}
+
+.payment-section input[type="text"], 
+.payment-section select {
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #1a202c;
+    color: white;
+    transition: border-color 0.3s;
+}
+
+.payment-section input[type="text"]:focus, 
+.payment-section select:focus {
+    border-color: #319795;
+    outline: none;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.form-buttons input[type="submit"],
+.form-buttons button {
+    background-color: #3182ce;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.form-buttons input[type="submit"]:hover,
+.form-buttons button:hover {
+    background-color: #2b6cb0;
+    transform: translateY(-2px);
+}
+
+.form-buttons button {
+    background-color: #e53e3e; /* Cancel button color */
+}
+
+.form-buttons button:hover {
+    background-color: #c53030; /* Hover color for cancel button */
+    transform: translateY(-2px);
+}
