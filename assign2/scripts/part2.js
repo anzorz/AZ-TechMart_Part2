@@ -173,15 +173,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Attach event listener for cancel order button
-    const cancelOrderBtn = document.getElementById('cancelOrderBtn');
-    if (cancelOrderBtn) {
-        cancelOrderBtn.addEventListener('click', cancelOrder);
-    }
 
-    // Load payment data when payment.html loads
-    if (document.getElementById('customerName')) {
-        loadPaymentData();
+     // Attach event listener for cancel order button
+     const cancelOrderBtn = document.getElementById('cancelOrderBtn');
+     if (cancelOrderBtn) {
+         cancelOrderBtn.addEventListener('click', cancelOrder);
+     }
+ 
+     // Load payment data when payment.html loads
+     if (document.getElementById('customerName')) {
+         loadPaymentData();
+     }
+     // Attach validation to payment form submit**
+    const paymentForm = document.querySelector('.payment-section form');
+    if (paymentForm) {
+        paymentForm.addEventListener('submit', function (event) {
+            if (!validatePaymentForm()) {
+                event.preventDefault(); // Prevent form submission if validation fails
+            }
+        });
     }
 });
 
